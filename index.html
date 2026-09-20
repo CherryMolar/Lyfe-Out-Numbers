@@ -1,9 +1,748 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lyfe Outnumbers | Stress-Free Bookkeeping for Small Businesses</title>
+
+  <meta
+    name="description"
+    content="Lyfe Outnumbers provides reliable bookkeeping services for small businesses. Stay organized, understand your numbers, and spend less time worrying about your books."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1120px;
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #ececec;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      min-height: 75px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1f4d3c;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #bf8a3d;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #333;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #1f4d3c;
+    }
+
+    .nav-button {
+      background: #1f4d3c;
+      color: white !important;
+      padding: 11px 20px;
+      border-radius: 6px;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: #f5f8f6;
+      padding: 100px 0;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: #bf8a3d;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.08;
+      color: #173d30;
+      margin-bottom: 24px;
+      letter-spacing: -1.8px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 660px;
+      color: #555;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .button-primary {
+      display: inline-block;
+      padding: 14px 25px;
+      background: #1f4d3c;
+      color: #fff;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .button-secondary {
+      display: inline-block;
+      padding: 14px 25px;
+      border: 1px solid #1f4d3c;
+      color: #1f4d3c;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      max-width: 650px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: 40px;
+      color: #173d30;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: #666;
+      font-size: 18px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: #ffffff;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      border: 1px solid #e3e8e5;
+      border-radius: 10px;
+      padding: 32px;
+      background: #fff;
+    }
+
+    .service-number {
+      width: 42px;
+      height: 42px;
+      background: #eef4f1;
+      color: #1f4d3c;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      color: #173d30;
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #666;
+      font-size: 15px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #173d30;
+      color: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about h2 {
+      font-size: 42px;
+      margin-bottom: 22px;
+      line-height: 1.2;
+    }
+
+    .about p {
+      color: #e2ebe6;
+      margin-bottom: 18px;
+      font-size: 17px;
+    }
+
+    .about-box {
+      background: #224e40;
+      padding: 38px;
+      border-radius: 12px;
+    }
+
+    .about-box h3 {
+      margin-bottom: 22px;
+      font-size: 24px;
+    }
+
+    .about-item {
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    .about-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .about-item strong {
+      display: block;
+      color: #e4bb79;
+      margin-bottom: 4px;
+    }
+
+    /* WHY */
+
+    .why {
+      background: #f8f8f6;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .why-card {
+      background: white;
+      border-radius: 8px;
+      padding: 30px;
+      border-left: 4px solid #bf8a3d;
+    }
+
+    .why-card h3 {
+      color: #173d30;
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .why-card p {
+      color: #666;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .cta-box {
+      background: #f0f5f2;
+      padding: 70px 30px;
+      border-radius: 14px;
+    }
+
+    .cta h2 {
+      font-size: 42px;
+      color: #173d30;
+      margin-bottom: 18px;
+    }
+
+    .cta p {
+      font-size: 18px;
+      color: #616161;
+      max-width: 650px;
+      margin: 0 auto 30px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #173d30;
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      color: #d7e1dc;
+      max-width: 620px;
+      margin: auto;
+    }
+
+    .contact-email {
+      display: inline-block;
+      margin-top: 25px;
+      color: #fff;
+      border: 1px solid #c9d8d1;
+      padding: 13px 25px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #102c23;
+      color: #b9c9c2;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .service-grid,
+      .about-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        gap: 40px;
+      }
+
+      .section-heading h2,
+      .about h2,
+      .cta h2 {
+        font-size: 34px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>My website is live!</h1>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">Lyfe <span>Outnumbers</span></a>
+
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#why-us">Why Us</a>
+          <a href="#contact" class="nav-button">Let's Talk</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Bookkeeping for Small Businesses
+        </div>
+
+        <h1>
+          Stress-Free Bookkeeping for Small Businesses
+        </h1>
+
+        <p>
+          Spend less time worrying about your books and more time running your
+          business. Lyfe Outnumbers helps keep your finances organized,
+          accurate, and easier to understand.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="button-primary">
+            Get Started
+          </a>
+
+          <a href="#services" class="button-secondary">
+            View Services
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section class="services" id="services">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Bookkeeping without the headache.</h2>
+
+        <p>
+          Clear books give you a clearer picture of your business.
+          We help keep your financial records organized so you know
+          where your business stands.
+        </p>
+      </div>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-number">01</div>
+
+          <h3>Monthly Bookkeeping</h3>
+
+          <p>
+            Ongoing bookkeeping to keep your income, expenses, and accounts
+            properly recorded and up to date.
+          </p>
+        </div>
+
+
+        <div class="service-card">
+          <div class="service-number">02</div>
+
+          <h3>Bank & Credit Card Reconciliation</h3>
+
+          <p>
+            Your books are compared against your bank and credit card activity
+            to help catch missing, duplicated, or incorrect transactions.
+          </p>
+        </div>
+
+
+        <div class="service-card">
+          <div class="service-number">03</div>
+
+          <h3>Bookkeeping Cleanup</h3>
+
+          <p>
+            Behind on your books? We help organize past transactions and clean
+            up bookkeeping issues so you can move forward.
+          </p>
+        </div>
+
+
+        <div class="service-card">
+          <div class="service-number">04</div>
+
+          <h3>QuickBooks Support</h3>
+
+          <p>
+            Help with QuickBooks Online setup, transaction categorization,
+            account organization, and day-to-day bookkeeping.
+          </p>
+        </div>
+
+
+        <div class="service-card">
+          <div class="service-number">05</div>
+
+          <h3>Financial Reports</h3>
+
+          <p>
+            Receive clear financial reports that help you understand your
+            revenue, expenses, and overall financial position.
+          </p>
+        </div>
+
+
+        <div class="service-card">
+          <div class="service-number">06</div>
+
+          <h3>Accounts Receivable & Payable</h3>
+
+          <p>
+            Stay on top of customer invoices, outstanding balances, bills,
+            and payments without losing track of deadlines.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            About Lyfe Outnumbers
+          </div>
+
+          <h2>
+            Your books shouldn't keep you up at night.
+          </h2>
+
+          <p>
+            Running a business already gives you enough to think about.
+            Bookkeeping shouldn't be another thing constantly sitting on
+            your to-do list.
+          </p>
+
+          <p>
+            Lyfe Outnumbers helps small business owners maintain organized
+            financial records, stay on top of their numbers, and spend more
+            time focusing on the work that actually grows their business.
+          </p>
+
+        </div>
+
+
+        <div class="about-box">
+
+          <h3>What you can expect</h3>
+
+          <div class="about-item">
+            <strong>Accurate Books</strong>
+            Careful bookkeeping with attention to the details.
+          </div>
+
+          <div class="about-item">
+            <strong>Clear Communication</strong>
+            Straight answers without unnecessary accounting jargon.
+          </div>
+
+          <div class="about-item">
+            <strong>Reliable Support</strong>
+            Consistent bookkeeping support you can depend on.
+          </div>
+
+          <div class="about-item">
+            <strong>Remote Service</strong>
+            Work with us wherever your business is located.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- WHY US -->
+
+  <section class="why" id="why-us">
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>
+          Know your numbers. Run your business with confidence.
+        </h2>
+
+        <p>
+          Good bookkeeping isn't only about recording transactions.
+          It gives you the information you need to understand what's
+          happening inside your business.
+        </p>
+
+      </div>
+
+
+      <div class="why-grid">
+
+        <div class="why-card">
+          <h3>Save Time</h3>
+
+          <p>
+            Stop spending evenings sorting receipts, fixing transactions,
+            and trying to figure out QuickBooks.
+          </p>
+        </div>
+
+
+        <div class="why-card">
+          <h3>Stay Organized</h3>
+
+          <p>
+            Keep your financial records current instead of rushing to clean
+            everything up at tax time.
+          </p>
+        </div>
+
+
+        <div class="why-card">
+          <h3>Understand Your Business</h3>
+
+          <p>
+            See where your money is coming from, where it's going, and how
+            your business is performing.
+          </p>
+        </div>
+
+
+        <div class="why-card">
+          <h3>Make Better Decisions</h3>
+
+          <p>
+            Reliable financial records give you better information when
+            planning your next move.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CALL TO ACTION -->
+
+  <section class="cta">
+    <div class="container">
+
+      <div class="cta-box">
+
+        <h2>
+          Ready to get your books under control?
+        </h2>
+
+        <p>
+          Whether you need monthly bookkeeping or help cleaning up your
+          existing books, let's talk about what your business needs.
+        </p>
+
+        <a href="#contact" class="button-primary">
+          Let's Talk
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+    <div class="container">
+
+      <h2>Let's talk about your books.</h2>
+
+      <p>
+        Tell us a little about your business and what you need help with.
+        We'll discuss how Lyfe Outnumbers can help keep your bookkeeping
+        organized.
+      </p>
+
+      <!-- REPLACE THIS EMAIL WITH YOUR REAL EMAIL -->
+      <a
+        href="mailto:hello@lyfeoutnumbers.com"
+        class="contact-email"
+      >
+        hello@lyfeoutnumbers.com
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Lyfe Outnumbers. All rights reserved.
+  </footer>
+
 </body>
 </html>
